@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>城域科技系統整合企業</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #ffcc00, #1a1a1a);
+            color: white;
+            overflow-x: hidden;
+        }
+        header {
+            background-color: #ffcc00;
+            color: black;
+            text-align: center;
+            padding: 20px;
+            animation: fadeInZoom 1.2s ease-in-out;
+        }
+        @keyframes fadeInZoom {
+            0% { opacity: 0; transform: scale(0.8); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background: #1a1a1a;
+            padding: 10px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #ffcc00;
+        }
+        section {
+            padding: 50px;
+            text-align: center;
+            background: #fff8dc;
+            color: black;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.6s ease-in-out;
+        }
+        .show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .contact {
+            background: #ffeb99;
+            padding: 30px;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #1a1a1a;
+            color: white;
+        }
+        .scroll-top, .contact-btn, .float-contact {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #ffcc00;
+            color: black;
+            padding: 15px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 20px;
+            border: none;
+            transition: transform 0.3s;
+        }
+        .scroll-top:hover, .contact-btn:hover, .float-contact:hover {
+            transform: scale(1.1);
+        }
+        .contact-btn {
+            bottom: 80px;
+            right: 20px;
+            border-radius: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+        .float-contact {
+            bottom: 140px;
+            font-size: 18px;
+        }
+    </style>
+    <script>
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+        document.addEventListener("scroll", function() {
+            document.querySelectorAll("section").forEach(section => {
+                if (section.getBoundingClientRect().top < window.innerHeight - 50) {
+                    section.classList.add("show");
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <h1>城域科技系統整合企業</h1>
+        <p>專業整合．智慧未來</p>
+    </header>
+    <nav>
+        <a href="#about">公司簡介</a>
+        <a href="#procurement">共約採購</a>
+        <a href="#products">產品介紹</a>
+        <a href="#projects">工程實績</a>
+        <a href="#contact">聯絡我們</a>
+    </nav>
+    <section id="about">
+        <h2>公司簡介</h2>
+        <p>城域科技系統整合企業成立於西元2016年，致力於資訊設備、環境監控安全系統、數位通訊、軟硬體整合及銷售服務...</p>
+    </section>
+    <section id="procurement">
+        <h2>共約採購</h2>
+        <p>與多家企業合作，提供最佳採購方案。</p>
+    </section>
+    <section id="products">
+        <h2>產品介紹</h2>
+        <p>提供各種高效能科技產品與解決方案。</p>
+    </section>
+    <section id="projects">
+        <h2>工程實績</h2>
+        <p>成功完成多個大型科技整合工程，品質卓越。</p>
+    </section>
+    <section id="contact" class="contact">
+        <h2>聯絡我們</h2>
+        <p>📞 0968-066-492 余先生</p>
+		<p>📍 信箱:sales@cityarea.com.tw</p>
+        <p>📍 地址: 高雄市仁武區仁和南街17巷40號1樓</p>
+        <a href="tel:0968066492" class="contact-btn">立即撥打 0968-066-492</a>
+    </section>
+    <footer>
+        <p>版權所有 &copy; 2025 城域科技系統整合企業</p>
+    </footer>
+    <button class="scroll-top" onclick="scrollToTop()">&#8679;</button>
+    <button class="float-contact">💬 客服</button>
+</body>
+</html>
